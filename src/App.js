@@ -7,12 +7,12 @@ import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 import {
   Route,
-  Switch,
+ 
   BrowserRouter,
 } from "react-router-dom";
 const App=()=> {
   return (
-    <BrowserRouter>
+   
    
     <div className='app-wrapper'>
       <Header />
@@ -20,14 +20,15 @@ const App=()=> {
       <div className={'app-wrapper-content'}>
 
       
-      <Route path="/dialogs" component={Dialogs} />
-      <Route path="/profile" component={Profile} />
+      <Route path="/dialogs" render={() => <Dialogs />}/>
+      <Route path="/profile" render={() => <Profile />}/>
+  
 
       
       </div>
     </div>
    
-    </BrowserRouter>
+    
   );
 }
 

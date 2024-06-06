@@ -1,13 +1,24 @@
 .nav{
     grid-area: n;
     background-color: burlywood;
+    padding: 10px;
     }
     
 
 .item{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+   
+    padding-top: 10px;
+    padding-bottom: 10px;
 color: white;
 }
 
-.item.active{
+.item a{
+    color: white;
+    text-decoration: none;
+}
+
+.item a.active{
     color: gold;
 }
