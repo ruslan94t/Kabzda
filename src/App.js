@@ -20,7 +20,7 @@ const App=()=> {
       <div className={'app-wrapper-content'}>
 
       
-      <Route path="/dialogs" render={() => <Dialogs />}/>
+      <Route exact path="/dialogs" render={() => <Dialogs />}/>
       <Route path="/profile" render={() => <Profile />}/>
   
 

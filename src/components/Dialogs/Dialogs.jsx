@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './Dialogs.module.css'
-
+import {NavLink} from 'react-router-dom'
 
 
 export default function Dialogs() {
@@ -8,19 +8,24 @@ export default function Dialogs() {
     <div className={s.dialogs}>
       <div className={s.dialogsItems}>
       <div className={s.dialog+' '+s.active}>
-          Dimych
+        <NavLink to="/dialogs/1">Dimych</NavLink>
+          
         </div>
         <div className={s.dialog}>
-          Sveta
+        <NavLink to="/dialogs/2">Sveta</NavLink>
+          
         </div>
         <div className={s.dialog}>
-          Sasha
+        <NavLink to="/dialogs/3"> Sasha</NavLink>
+         
         </div>
         <div className={s.dialog}>
-          Valera
+        <NavLink to="/dialogs/4">Valera</NavLink>
+          
         </div>
         <div className={s.dialog}>
-          Andrey
+        <NavLink to="/dialogs/5"> Andrey</NavLink>
+         
         </div>
       </div>
       <div className={s.messages}>
