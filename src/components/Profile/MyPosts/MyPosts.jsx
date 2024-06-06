@@ -16,9 +16,9 @@ export default function MyPosts() {
         <button>Remove</button>
       </div>
       <div className={s.posts}>
-       <Post />
-       <Post />
-       <Post />
+       <Post message="Hi how are you" />
+       <Post message="its My first post" />
+       <Post message="follow white rabit"/>
       </div>
     </div>
 
