@@ -3,8 +3,15 @@
     background-color: cornflowerblue;
     }
 
-
+.postsBlock{
+    padding: 10px;
+}
 
     .item{
         color: greenyellow;
+    }
+
+
+    .posts{
+        padding: 10px;
     }

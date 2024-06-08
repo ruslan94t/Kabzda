@@ -6,19 +6,29 @@ import Post from './Post/Post'
 
 
 export default function MyPosts() {
+
+
+
+
+
+  let postsData = [
+    {post:'Where my many ' },
+    {post:'Say my Name'},
+    {post:'You Haisenberg'}
+  ]
   return (
  
-    <div>
-      My Post 
+    <div className={s.postsBlock}>
+    <h3>  My Post </h3>
       <div>
-        <textarea></textarea>
-        <button>Add Post</button>
-        <button>Remove</button>
+        <div><textarea></textarea></div>
+       <div> <button>Add Post</button></div>
+       <div><button>Remove</button></div>
       </div>
       <div className={s.posts}>
-       <Post message="Hi how are you" />
-       <Post message="its My first post" />
-       <Post message="follow white rabit"/>
+       <Post message={postsData[0].post} />
+       <Post message={postsData[1].post} />
+       <Post message={postsData[2].post}/>
       </div>
     </div>
 
