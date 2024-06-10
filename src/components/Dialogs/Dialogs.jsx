@@ -37,23 +37,32 @@ let dialogsData = [
 let messagesData = [
   {id:1, name:'Hellow '},
   {id:2, name:'Yo'},
-  {id:3, name:'Yo Yo'}
+  {id:3, name:'Yo Yo, its'}
 ]
 
+let dialogsElements = [
+ dialogsData.map((dialog)=>(
+  <DialogItem  name={dialog.name} id={dialog.id}/>
+  
+ ))
+]
 
-
+let messageElements = [
+  messagesData.map((item)=>(
+    <Message message={item.name} />
+   
+  ))
+ ]
 
 
   return (
     <div className={s.dialogs}>
       <div className={s.dialogsItems}>
-      <DialogItem  name={dialogsData[0].name} id={dialogsData[0].id}/>
-      <DialogItem  name={dialogsData[1].name} id={dialogsData[1].id}/>
+        {dialogsElements}
      
       </div>
       <div className={s.messages}>
-        <Message message={messagesData[0].name} />
-        <Message message={messagesData[1].name} />
+       {messageElements}
        
        
       </div>

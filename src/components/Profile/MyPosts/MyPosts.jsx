@@ -16,6 +16,13 @@ export default function MyPosts() {
     {post:'Say my Name'},
     {post:'You Haisenberg'}
   ]
+
+
+  let postsElements = [
+postsData.map((post)=>(
+  <Post message={post.post} />
+))
+  ]
   return (
  
     <div className={s.postsBlock}>
@@ -26,9 +33,8 @@ export default function MyPosts() {
        <div><button>Remove</button></div>
       </div>
       <div className={s.posts}>
-       <Post message={postsData[0].post} />
-       <Post message={postsData[1].post} />
-       <Post message={postsData[2].post}/>
+      
+      {postsElements}
       </div>
     </div>
 
