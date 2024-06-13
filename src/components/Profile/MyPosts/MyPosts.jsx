@@ -5,21 +5,13 @@ import Post from './Post/Post'
 
 
 
-export default function MyPosts() {
+export default function MyPosts(props) {
 
 
-
-
-
-  let postsData = [
-    {post:'Where my many ' },
-    {post:'Say my Name'},
-    {post:'You Haisenberg'}
-  ]
 
 
   let postsElements = [
-postsData.map((post)=>(
+props.state.posts.map((post)=>(
   <Post message={post.post} />
 ))
   ]
