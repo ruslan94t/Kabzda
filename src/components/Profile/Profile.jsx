@@ -11,7 +11,12 @@ export default function Profile(props) {
     <div className={s.content}>
    
     <ProfileInfo />
-     <MyPosts  state={props.state} addPost={props.addPost} />
+     <MyPosts
+
+     state={props.state}
+     dispatch={props.dispatch}
+  
+       />
    
   </div>
   )

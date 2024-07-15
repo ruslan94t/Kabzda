@@ -1,11 +1,11 @@
 
-import React, {Component} from 'react'
+import React from 'react'
 import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
-import { Route,BrowserRouter,} from "react-router-dom";
+import { Route} from "react-router-dom";
 
 
 
@@ -26,8 +26,10 @@ const App=(props)=> {
       state={props.state.dialogsPage}
      
       />}/>
-      <Route path="/profile" render={() => <Profile addPost={props.addPost}
-      state={props.state.profilePage} />}/>
+      <Route path="/profile" render={() => <Profile dispatch={props.dispatch}
+      state={props.state.profilePage}
+  
+      />}/>
   
 
       

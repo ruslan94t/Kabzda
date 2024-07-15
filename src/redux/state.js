@@ -1,6 +1,13 @@
 
 
-let state ={
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
+
+
+
+let store ={
+  _state :{
 
 
     profilePage:{
@@ -9,6 +16,7 @@ let state ={
             {post:'Say my Name', id:3, likeCount:22},
             {post:'You Haisenberg', id:3, likeCount:1}
           ],
+          newPostText:'It Samuray',
     },
     dialogsPage:{
         dialogs:[
@@ -26,13 +34,48 @@ let state ={
 
  
 
-};
+},
+getState(){
+return this._state;
+},
+_callSubscriber (){
+  console.log('state change')
+},
 
-export let addPost = (postMessage)=>{
+subscribe (observer){
+  this._callSubscriber =observer;
+  },
+
+dispatch(action){
+if(action.type === ADD_POST){
 
   let newMessage={
-    post:postMessage, id:5, likeCount:1
+    post:this._state.profilePage.newPostText, 
+    id:5, 
+    likeCount:1,
   }
-  state.profilePage.posts.push(newMessage)
+  this._state.profilePage.posts.push(newMessage);
+  this._state.newPostText='';
+  this._callSubscriber(this._state);
+
 }
-export default state;
+else if(action.type ===UPDATE_NEW_POST_TEXT){
+  this._state.profilePage.newPostText=action.newText;
+  this._callSubscriber(this._state)
+}
+},  
+
+}
+export const addPostActionCreator =()=>{
+  return {type:ADD_POST}
+}
+
+export const updateNewPostTextActionCreator = (newText)=>{
+  return {type:UPDATE_NEW_POST_TEXT, newText}
+}
+
+
+
+
+
+export default store;
